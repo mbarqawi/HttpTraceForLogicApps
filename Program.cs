@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 namespace HttpsTrace
 {
@@ -6,42 +7,30 @@ namespace HttpsTrace
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello, World!"); 
-          //  var listener = new HttpEventListener(_output);
+            if (args.Length == 0)
+            {
+                Console.WriteLine("Please provide a URL as a command-line argument.");
+                Console.WriteLine("Example: dotnet run https://example.com");
+                return;
+            }
 
-
+            var url = args[0];
             using var listener2 = new HttpEventListener();
 
             using var client = new HttpClient();
 
-            while (true)
+            try
             {
-                try
-                {
-                    // Ask the user to enter a URL
-                    Console.Write("Please enter a URL: ");
-                    var url = Console.ReadLine();
-
-                    // Example: Send a GET request to a URL
-                    var response = await client.GetAsync(url);
-                    Console.WriteLine("Response received:");
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"An error occurred: {e.Message}");
-                }
-
-                // Ask the user if they want to exit
-                Console.Write("Do you want to exit? (y/n): ");
-                var exit = Console.ReadLine();
-                if (exit.ToLower() == "y")
-                {
-                    break;
-                }
+                var response = await client.GetAsync(url);
+                Console.WriteLine("Response received:");
+                // Process the response as needed
             }
+            catch (Exception e)
+            {
+                Console.WriteLine($"An error occurred: {e.Message}");
+            }
+            var exit = Console.ReadLine();
         }
     }
-
-    // Keep the listener around while you want the logging to continue, dispose it after.
-
 }
+
