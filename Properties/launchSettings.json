@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HttpsTrace": {
+      "commandName": "Project",
+      "commandLineArgs": " https://client.badssl.com -c\"C:\\Users\\mobarqaw\\Downloads\\badssl.com-client.p12\" -p badssl.com"
+    }
+  }
+}
