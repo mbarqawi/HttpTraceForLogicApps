@@ -1,5 +1,5 @@
 
-# Https trace for Logic Apps
+# Https trace for Logic Apps v2
 
 Application enables the trace and tries to call the HTTP endpoint and display the error in the console,
 
@@ -24,14 +24,14 @@ Then you will have to publish the solution to be able to use the executable 
 
 ```
 Cd HttpTraceForLogicApps
-dotnet publish
-Cd HttpTraceForLogicApps\bin\Debug\net8.0\publish
-HttpsTrace.exe https://wrong.host.badssl.com/ >ssl.json
+build.cmd
+HttpsTrace.exe wrong.host.badssl.com
+HttpsTrace.exe client.badssl.com -c badssl.com-client.pfx -p badssl.com
 ```
 
 
 
-You need to set the environment variable DOTNET_ADD_GLOBAL_TOOLS_TO_PATH to false to be able to run the dotnet publish  on the Kudu
+You need to set the environment variable DOTNET_ADD_GLOBAL_TOOLS_TO_PATH to false to be able to run the dotnet publish  on the Kudu if the buld fails
 
 ## License
 

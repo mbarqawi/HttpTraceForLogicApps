@@ -2,7 +2,7 @@
   "profiles": {
     "HttpsTrace": {
       "commandName": "Project",
-      "commandLineArgs": " untrusted-root.badssl.com"
+      "commandLineArgs": " client.badssl.com -c C:\\Users\\mobarqaw\\Downloads\\badssl.com-client.pfx -p badssl.com"
     }
   }
 }

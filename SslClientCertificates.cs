@@ -89,7 +89,7 @@ namespace HttpsTrace
                             }
                             WriteSection("Client Certificate Authentication",
                                sslStream.IsMutuallyAuthenticated ? "<p class='text-green-500'>Client certificate was required and successfully authenticated.</p>" :
-                               "<p>Server did NOT require a client certificate.</p>");
+                               "<p>---------</p>");
                            
                         }
                     }
