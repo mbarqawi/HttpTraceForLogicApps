@@ -15,11 +15,11 @@ Execute the below command to clone the GitHub repository 
 `git clone https://github.com/mbarqawi/HttpTraceForLogicApps.git`
 
 
-the above commend will create a folder 
+The above commend will create a folder 
 
 `HttpTraceForLogicApps`
 
-Then you will have to publish the solution to be able to use the executable 
+Then you will have to publish the solution to be able to use the executable by running the Build.cmd 
 
 
 ```
