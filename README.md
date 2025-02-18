@@ -29,6 +29,8 @@ HttpsTrace.exe wrong.host.badssl.com
 HttpsTrace.exe client.badssl.com -c badssl.com-client.pfx -p badssl.com
 ```
 
+## Sample output report
+![image](https://github.com/user-attachments/assets/110dbd58-d142-4cc4-85fd-779663ac87bf)
 
 
 You need to set the environment variable DOTNET_ADD_GLOBAL_TOOLS_TO_PATH to false to be able to run the dotnet publish  on the Kudu if the buld fails
