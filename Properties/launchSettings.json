@@ -2,7 +2,7 @@
   "profiles": {
     "HttpsTrace": {
       "commandName": "Project",
-      "commandLineArgs": " client.badssl.com "
+      "commandLineArgs": "  untrusted-root.badssl.com "
     }
   }
 }

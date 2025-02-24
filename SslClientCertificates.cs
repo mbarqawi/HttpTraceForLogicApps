@@ -104,6 +104,10 @@ namespace HttpsTrace
                                sslStream.IsMutuallyAuthenticated ? "<p class='text-green-500'>Client certificate was required </p>" :
                                "<p>---------</p>");
 
+
+                            // Log successful connection
+                            WriteSection("Connection Status", "<p class='text-green-500'>Connection successful.</p>");
+
                         }
                     }
                 }
@@ -150,6 +154,9 @@ namespace HttpsTrace
             string chainStatusTable = string.Empty;
             if (chain != null)
             {
+
+
+
                 chainStatusTable = "<table class='table-auto w-full'><thead><tr><th class='px-4 py-2'>Status</th><th class='px-4 py-2'>Status Information</th></tr></thead><tbody>";
                 foreach (X509ChainStatus chainStatus in chain.ChainStatus)
                 {
@@ -162,15 +169,9 @@ namespace HttpsTrace
             WriteSection("Server Certificate Validation", $"<ol>Server Certificate: {certificate?.Subject} <li>Thumbprint {certificate?.GetCertHashString()}</li><li> SSL Policy Errors  {sslPolicyErrors} </li>" +
                 $"<li>{chainStatusTable}</li></ol></p>");
 
-            if (sslPolicyErrors == SslPolicyErrors.None)
-            {
-                return true;
-            }
-            else
-            {
-
-                return false;
-            }
+         
+            return true;
+       
         }
 
         private static X509Certificate SelectLocalCertificate(
